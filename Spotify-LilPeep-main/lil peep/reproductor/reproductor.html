@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lil-peep</title>
+</head>
+<body>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background-color: #121212;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .player{
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            width: 350px;
+            position: relative;
+        }
+        .player .imgbx {
+            position: relative;
+            width: 100%;
+            height: 350px;
+        }
+        .player .imgbx img{
+            width: 100%;
+            height: 100%;
+           object-fit: cover;
+           
+        }
+        .audio{
+            width: 100%;
+            background-color: white;
+        }
+    </style>
+    <main class="player">
+        <div class="imgbx">
+            <img src="../img/allimg/photo1.jpg" alt="">
+        </div>
+        <audio class="audio" src="../audio/Lil Peep - Save That Shit.mp3" controls>
+
+        </audio>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+                const imagenSeleccionada = localStorage.getItem('imagenSeleccionada');
+                if (imagenSeleccionada) {
+                    const imgElement = document.querySelector('.imgbx img');
+                    imgElement.src = '../img/allimg/' + imagenSeleccionada;
+                }
+            });
+
+    </script>
+</body>
+</html>
